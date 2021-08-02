@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,39 +10,49 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>AppPromedio</title>
 </head>
+
 <body>
     <header class="header">
-        <h1>App promedio</h1>
-        <p>Hecho por estudiantes para estudiantes</p>
+        <h1 class="nombre-header">App promedio</h1>
+        <p class="parrafo-header">Hecho por estudiantes para estudiantes</p>
     </header>
 
-    <main>
-        <div class="cotenedor">
-            <div class="ingresar-asignatura">
+    <main class="contenedor">
+        <div class="principal">
+            <div class="ingresar-asignatura contenedor">
+                <h2 class="text-central ingresarAsignatura">Ingrese la asignatura</h2>
+                
                 <form class="formulario">
-                    <div class="campo">
-                        <label for="asignatura">Asignatura</label>
-                        <input type="text" name="asignatura" id="asignatura">
+                    <div class="asignatura">
+                        <div class="campo">
+                            <label for="asignatura" class="input-label">Asignatura</label>
+                            <input type="text" name="asignatura" id="asignatura" placeholder="Asignatura"
+                                class="campo-input">
+                        </div>
+                    </div>
+
+                    <div class="calificacion">
+                        <div class="campo califica">
+                            <label for="calificacion" class="input-label">Calificación</label>
+                            <input type="text" name="calificacion" id="calificacion" placeholder="Calificacion"
+                                class="campo-input">
+                        </div>
                     </div>
 
                     <div class="campo">
-                        <label for="calificacion">Calificacion</label>
-                        <input type="text" name="calificacion" id="calificacion">
+                        <label for="creditos" class="input-label">Creditos</label>
+                        <input type="text" name="creditos" id="creditos" placeholder="creditos" class="campo-input">
                     </div>
-
-                    <div class="campo">
-                        <label for="creditos">Creditos</label>
-                        <input type="text" name="creditos" id="creditos">
-                    </div>
-
-                    <button type="submit">Agregar Materia</button>
                 </form>
-            </div> <!--INGRESAR ASIGNATURA-->
 
-            <div class="MAMAGUEVO">
-                <table>
+                <button type="submit" class="boton boton-azul">Agregar Materia</button>
+            </div>
+            <!--INGRESAR ASIGNATURA-->
+
+            <div class="promedio contenedor">
+                <table class="calificaciones">
                     <thead>
                         <th>Asignatura</th>
                         <th>Calificación</th>
@@ -49,17 +60,23 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
+                            <td class="text-start"></td>
                             <td></td>
                             <td></td>
                         </tr>
+                        
                     </tbody>
                 </table>
 
-                <button>Borrar todo</button>
-                <button>Calcular promedio</button>
+                <div class="botones">
+                    <button class="boton-result boton-rojo">Borrar todo</button>
+                    <button class="boton-result boton-azul">Calcular promedio</button>
+                </div>
+
             </div>
-        </div> <!--CONTENEDOR-->
+        </div>
+        <!--CONTENEDOR-->
     </main>
 </body>
+
 </html>
