@@ -20,7 +20,7 @@
     <main>
         <div class="cotenedor">
             <div class="ingresar-asignatura">
-                <form class="formulario">
+                <form name="agregarAsignatura" class="formulario">
                     <div class="campo">
                         <label for="asignatura">Asignatura</label>
                         <input type="text" name="asignatura" id="asignatura">
@@ -28,20 +28,20 @@
 
                     <div class="campo">
                         <label for="calificacion">Calificacion</label>
-                        <input type="text" name="calificacion" id="calificacion">
+                        <input type="number" name="calificacion" id="calificacion" min="0" max="100">
                     </div>
 
                     <div class="campo">
                         <label for="creditos">Creditos</label>
-                        <input type="text" name="creditos" id="creditos">
+                        <input type="number" name="creditos" id="creditos" min="0">
                     </div>
 
                     <button type="submit">Agregar Materia</button>
                 </form>
             </div> <!--INGRESAR ASIGNATURA-->
 
-            <div class="MAMAGUEVO">
-                <table>
+            <div>
+                <table id="tabla">
                     <thead>
                         <th>Asignatura</th>
                         <th>Calificación</th>
@@ -56,10 +56,14 @@
                     </tbody>
                 </table>
 
-                <button>Borrar todo</button>
-                <button>Calcular promedio</button>
+                <p id="creditosTotales">Creditos totales:</p>
+                <p id="promedio">Promedio:</p>
+
+                <button type="button" id="btnBorrar">Borrar todo</button>
+                <button type="button" id="btnCalcular">Calcular promedio</button>
             </div>
         </div> <!--CONTENEDOR-->
     </main>
+    <script src="js/main.js"></script>
 </body>
 </html>
