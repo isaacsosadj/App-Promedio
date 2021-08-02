@@ -28,7 +28,18 @@
 
                     <div class="campo">
                         <label for="calificacion">Calificacion</label>
-                        <input type="number" name="calificacion" id="calificacion" min="0" max="100">
+                        <input type="number" name="calificacionNumero" id="calificacionNumero" min="0" max="100">
+                        <select name="calificacionLetras" id="calificacionLetras">
+                            <option value="4">A</option>
+                            <option value="3">B</option>
+                            <option value="2">C</option>
+                            <option value="1">D</option>
+                            <option value="0">F</option>
+                        </select>
+                        <label for="base100">En base 100</label>
+                        <input type="radio" onclick="seleccionarTipoCalificacion()" name="calificacionTipo" id="base100" value="base100" checked>
+                        <label for="baseLetras">En base a letras</label>
+                        <input type="radio" onclick="seleccionarTipoCalificacion()" name="calificacionTipo" id="baseLetras" value="baseLetras">
                     </div>
 
                     <div class="campo">
@@ -36,7 +47,7 @@
                         <input type="number" name="creditos" id="creditos" min="0">
                     </div>
 
-                    <button type="submit">Agregar Materia</button>
+                    <button type="submit" id="btnAgregar">Agregar Materia</button>
                 </form>
             </div> <!--INGRESAR ASIGNATURA-->
 
