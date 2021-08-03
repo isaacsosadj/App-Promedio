@@ -92,6 +92,10 @@ function calcular(){
     datos.promedio = datos.sumaPtsCalidad / datos.creditos;
     let promedio = datos.promedio.toFixed(1);
     
+    if(isNaN(promedio)){
+        promedio = 0;
+    }
+    
     document.querySelector('#creditosTotales').textContent = `Creditos totales: ${datos.creditos}`;
     document.querySelector('#promedio').textContent = `Promedio: ${promedio}`;
 }
