@@ -96,6 +96,7 @@ function agregar() {
 function calcular() {
     datos.promedio = datos.sumaPtsCalidad / datos.creditos;
     let promedio = datos.promedio.toFixed(1);
+<<<<<<< HEAD
 
     if (isNaN(promedio)) {
         promedio = 0;
@@ -105,6 +106,15 @@ function calcular() {
         "#creditosTotales"
     ).textContent = `Creditos totales: ${datos.creditos}`;
     document.querySelector("#promedio").textContent = `Promedio: ${promedio}`;
+=======
+    
+    if(isNaN(promedio)){
+        promedio = 0;
+    }
+    
+    document.querySelector('#creditosTotales').textContent = `Creditos totales: ${datos.creditos}`;
+    document.querySelector('#promedio').textContent = `Promedio: ${promedio}`;
+>>>>>>> 6d573d77b4b7e244f788e2fa41a2311ae56d3959
 }
 
 function limpiar() {
