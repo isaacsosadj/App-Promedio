@@ -6,7 +6,6 @@ const nombreAsignatura = form.asignatura;
 let calificacionInput = form.calificacionNumero; // !por defecto
 const creditosInput = form.creditos;
 const tabla = document.querySelector("#tabla tbody");
-console.log(tabla);
 let datos = {
     calificacion: 0,
     creditos: 0,
@@ -34,11 +33,9 @@ function seleccionarTipoCalificacion() {
     if (tipo === "base100") {
         document.querySelector("#calificacionLetras").style.display = "none";
         document.querySelector("#calificacionNumero").style.display = "inline";
-        // console.log(tipo)
     } else {
         document.querySelector("#calificacionNumero").style.display = "none";
         document.querySelector("#calificacionLetras").style.display = "inline";
-        // console.log(tipo)
     }
 }
 
@@ -76,8 +73,6 @@ function agregar() {
             calificacionMostrar = "F";
         }
     }
-    console.log(calificacion);
-
     tabla.innerHTML +=
         '<tr> <td class="text-start">' +
         nombre +
@@ -96,7 +91,6 @@ function agregar() {
 function calcular() {
     datos.promedio = datos.sumaPtsCalidad / datos.creditos;
     let promedio = datos.promedio.toFixed(1);
-<<<<<<< HEAD
 
     if (isNaN(promedio)) {
         promedio = 0;
@@ -106,15 +100,6 @@ function calcular() {
         "#creditosTotales"
     ).textContent = `Creditos totales: ${datos.creditos}`;
     document.querySelector("#promedio").textContent = `Promedio: ${promedio}`;
-=======
-    
-    if(isNaN(promedio)){
-        promedio = 0;
-    }
-    
-    document.querySelector('#creditosTotales').textContent = `Creditos totales: ${datos.creditos}`;
-    document.querySelector('#promedio').textContent = `Promedio: ${promedio}`;
->>>>>>> 6d573d77b4b7e244f788e2fa41a2311ae56d3959
 }
 
 function limpiar() {
@@ -168,16 +153,16 @@ btnCalcular.onclick = () => {
     calcular();
 };
 
-// document.onkeydown = function(e){
-//     tecla = (document.all) ? e.keyCode : e.which;
-//     if (tecla == 116){
-//       if (confirm("¿Seguro que quieres refrescar la página?") == true) {
-//          return true;
-//        } else {
-//          return false;
-//       }
-//     }
-// }
+document.onkeydown = function(e){
+    tecla = (document.all) ? e.keyCode : e.which;
+    if (tecla == 116){
+      if (confirm("¿Seguro que quieres refrescar la página?") == true) {
+         return true;
+       } else {
+         return false;
+      }
+    }
+}
 
 window.onbeforeunload = function (evt) {
     return "¿Desea recargar la página web?";
