@@ -23,7 +23,7 @@
         <div class="principal">
             <div class="ingresar-asignatura contenedor">
                 <h2 class="text-center ingresarAsignatura">Ingrese la asignatura</h2>
-                
+
                 <form name="agregarAsignatura" class="formulario">
                     <div class="asignatura">
                         <div class="campo">
@@ -36,8 +36,8 @@
                     <div class="calificacion">
                         <div class="campo califica">
                             <label for="calificacion" class="input-label">Calificación</label>
-                            <input type="number" name="calificacionNumero" id="calificacionNumero" placeholder="Calificacion"
-                                class="campo-input" min="0" max="100">
+                            <input type="number" name="calificacionNumero" id="calificacionNumero"
+                                placeholder="Calificacion" class="campo-input" min="0" max="100">
                             <select name="calificacionLetras" id="calificacionLetras" class="campo-input select">
                                 <option value="4">A</option>
                                 <option value="3">B</option>
@@ -50,27 +50,30 @@
 
                     <div class="campo">
                         <label for="creditos" class="input-label">Creditos</label>
-                        <input type="number" name="creditos" id="creditos" placeholder="Creditos" class="campo-input" min="0">
+                        <input type="number" name="creditos" id="creditos" placeholder="Creditos" class="campo-input"
+                            min="0">
                     </div>
 
                     <div class="flexIn">
                         <div class="cont">
                             <label for="base100" class="input-label">En base 100</label>
                             <label class="radio">
-                                <input type="radio" onclick="seleccionarTipoCalificacion()" name="calificacionTipo" id="base100" value="base100" checked>
+                                <input type="radio" onclick="seleccionarTipoCalificacion()" name="calificacionTipo"
+                                    id="base100" value="base100" checked>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="cont">
                             <label for="baseLetras" class="input-label">En base a letras</label>
                             <label class="radio">
-                                <input type="radio" onclick="seleccionarTipoCalificacion()" name="calificacionTipo" id="baseLetras" value="baseLetras">
+                                <input type="radio" onclick="seleccionarTipoCalificacion()" name="calificacionTipo"
+                                    id="baseLetras" value="baseLetras">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                     </div>
+                    <button type="submit" id="btnAgregar" class="boton boton-azul btn-form">Agregar Materia</button>
                 </form>
-                <button type="submit" id="btnAgregar" class="boton boton-azul">Agregar Materia</button>
                 <!-- <div class="anuncio-1">
                     <img src="img/anuncio 1.png" alt="">
                 </div> -->
@@ -85,13 +88,13 @@
                         <th class="text-center">Creditos</th>
                     </thead>
                     <div class="contenedor">
-                    <tbody>
-                    </tbody>
-                </div>
+                        <tbody>
+                        </tbody>
+                    </div>
                 </table>
                 <div class="flex resultado">
                     <p id="creditosTotales">Creditos totales: 0</p>
-                    <p id="promedio">Promedio: 0</p>    
+                    <p id="promedio">Promedio: 0</p>
                 </div>
 
                 <div class="botones">

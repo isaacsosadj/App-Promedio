@@ -21,21 +21,25 @@ html {
 *:after {
   box-sizing: inherit;
 }
+
 .text-center {
   text-align: center;
 }
+
 .text-start {
   text-align: start;
 }
+
 body {
   font-family: var(--fuente);
 }
+
 p {
   margin: 0;
   font-size: 1.8rem;
 }
 
-img{
+img {
   width: 100%;
 }
 
@@ -49,24 +53,29 @@ img{
   padding: 5rem 0 0 3.5rem;
   text-align: center;
 }
+
 .nombre-header {
   margin: 0 0 1rem 0;
   font-weight: bold;
   font-size: 4.2rem;
   color: var(--blanco);
 }
+
 .parrafo-header {
   font-size: 1.8rem;
   color: var(--blanco);
 }
+
 @media (min-width: 768px) {
   .header {
     height: 25rem;
     text-align: unset;
   }
+
   .nombre-header {
     font-size: 4.8rem;
   }
+
   .parrafo-header {
     font-size: 1.8rem;
   }
@@ -85,6 +94,7 @@ img{
   margin-bottom: 3rem;
   font-size: 2rem;
 }
+
 .ingresar-asignatura,
 .promedio {
   border: 1px solid var(--azul);
@@ -94,11 +104,12 @@ img{
 }
 
 @media (min-width: 800px) {
+
   .ingresar-asignatura,
   .promedio {
     height: 60rem;
   }
-  
+
   .principal {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -106,11 +117,13 @@ img{
     column-gap: 2rem;
     padding-top: 3rem;
   }
+
   .formulario {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
   }
+
   .asignatura {
     grid-column: 1 / 3;
   }
@@ -159,15 +172,18 @@ img{
 .boton-result {
   margin-top: 2.5rem;
 }
+
 .botones {
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
   margin: 5rem 0 2rem;
 }
+
 .boton {
   margin: 2rem 0;
 }
+
 @media (min-width: 800px) {
   .boton {
     margin-top: 0rem;
@@ -186,15 +202,22 @@ img{
   background-color: var(--azul);
   transition: background-color ease 0.3s;
 }
+
 .boton-azul:hover {
   background-color: #0165d6;
 }
+
 .boton-rojo {
   background-color: var(--rojo);
   transition: background-color ease 0.3s;
 }
+
 .boton-rojo:hover {
   background-color: #c21701;
+}
+
+.btn-form {
+  grid-column: 1 / 3;
 }
 
 /*Table*/
@@ -210,6 +233,7 @@ th {
   text-align: start;
   border-bottom: 1px solid var(--azul);
 }
+
 @media (min-width: 530px) {
   th {
     font-size: 2rem;
@@ -251,6 +275,7 @@ td {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
 .header_fijo tbody tr td {
   overflow: hidden;
   vertical-align: middle;
@@ -308,22 +333,23 @@ td {
   transition: opacity 0.5s ease;
 }
 
-.radio input:checked + .checkmark {
+.radio input:checked+.checkmark {
   display: inline-block;
   opacity: 1;
 }
 
-.anuncio-1 img{
+.anuncio-1 img {
   height: 13rem;
 }
 
-.anuncio-2 img{
+.anuncio-2 img {
   height: 60rem;
 }
-.anuncio-3{
+
+.anuncio-3 {
   grid-column: 1/4;
 }
 
-.anuncio-3 img{
+.anuncio-3 img {
   height: 20rem;
 }
