@@ -39,14 +39,48 @@ function seleccionarTipoCalificacion() {
     }
 }
 
+let alerta = document.createElement('P');
+
+function mostrarAlerta(mensaje, tipo, borrarAnterior = false) {
+    console.log(mensaje + tipo + borrarAnterior)
+    // alerta.style.display = 'hidden';
+
+    alerta.style.animation = 'fadeIn 1s alternate';
+    alerta.classList = '';
+
+    if (borrarAnterior === false) {
+        alerta.textContent = mensaje;
+        alerta.classList.add(tipo);
+        form.appendChild(alerta);
+    } else {
+        alerta = document.createElement('P')
+        alerta.textContent = mensaje;
+        alerta.classList.add(tipo);
+        form.appendChild(alerta);
+    }
+
+    setTimeout(() => {
+        alerta.style.animation = 'fadeOut 1s alternate';
+        setTimeout(() => {
+            // alerta.style.display = 'none';
+            // alerta.remove();
+            form.removeChild(alerta);
+        }, 1000)
+    }, 3000);
+}
+
 function validar() {
     if ((nombre === "") & (calificacion === "") & (creditos === "")) {
+        mostrarAlerta('Todos los campos deben estar llenos', 'error')
         console.log("******Todos los campos deben estar llenos******");
     } else if (nombre === "") {
+        mostrarAlerta('El Campo de asignatura debe estar lleno', 'error')
         console.log("******El Campo de asignatura debe estar lleno******");
     } else if (calificacion === "") {
-        console.log("******El Campo de calificaion debe estar lleno******");
+        mostrarAlerta('El Campo de calificacion debe estar lleno', 'error')
+        console.log("******El Campo de calificacion debe estar lleno******");
     } else if (creditos === "") {
+        mostrarAlerta('El Campo de creditos debe estar lleno', 'error')
         console.log("******El Campo de creditos debe estar lleno******");
     } else {
         return true;
@@ -86,6 +120,7 @@ function agregar() {
     datos.creditos += parseInt(creditos);
     datos.puntosCalidad = parseInt(calificacion) * parseInt(creditos);
     datos.sumaPtsCalidad += datos.puntosCalidad;
+    mostrarAlerta('Asignatura agregada', 'correcto', false);
 }
 
 function calcular() {
@@ -153,14 +188,14 @@ btnCalcular.onclick = () => {
     calcular();
 };
 
-document.onkeydown = function(e){
+document.onkeydown = function (e) {
     tecla = (document.all) ? e.keyCode : e.which;
-    if (tecla == 116){
-      if (confirm("¿Seguro que quieres refrescar la página?") == true) {
-         return true;
-       } else {
-         return false;
-      }
+    if (tecla == 116) {
+        if (confirm("¿Seguro que quieres refrescar la página?") == true) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 

@@ -216,7 +216,7 @@ img {
   background-color: #c21701;
 }
 
-.btn-form{
+.btn-form {
   grid-column: 1 / 3;
 }
 
@@ -352,4 +352,46 @@ td {
 
 .anuncio-3 img {
   height: 20rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+.error {
+  background-color: var(--rojo);
+  text-align: center;
+  padding: 1rem;
+  color: var(--blanco);
+  text-transform: uppercase;
+  grid-column: 1 / 3;
+  animation: fadeIn 1s alternate;
+  margin-bottom: 2rem;
+}
+
+
+.correcto {
+  background-color: rgb(74, 185, 0);
+  text-align: center;
+  padding: 1rem;
+  color: var(--blanco);
+  text-transform: uppercase;
+  grid-column: 1 / 3;
+  animation: fadeIn 1s alternate;
 }
