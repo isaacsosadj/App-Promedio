@@ -22,51 +22,51 @@
     <main class="contenedor">
         <div class="principal">
             <div class="ingresar-asignatura contenedor">
-                <h2 class="text-central ingresarAsignatura">Ingrese la asignatura</h2>
-                
+                <h2 class="text-center ingresarAsignatura">Ingrese la asignatura</h2>
+
                 <form class="formulario">
                     <div class="asignatura">
                         <div class="campo">
                             <label for="asignatura" class="input-label">Asignatura</label>
                             <input type="text" name="asignatura" id="asignatura" placeholder="Asignatura"
-                                class="campo-input">
+                                class="campo-input" autofocus>
                         </div>
                     </div>
 
                     <div class="calificacion">
                         <div class="campo califica">
                             <label for="calificacion" class="input-label">Calificación</label>
-                            <input type="text" name="calificacion" id="calificacion" placeholder="Calificacion"
+                            <input type="number" name="calificacion" id="calificacion" placeholder="Calificacion"
                                 class="campo-input">
                         </div>
                     </div>
 
                     <div class="campo">
                         <label for="creditos" class="input-label">Creditos</label>
-                        <input type="text" name="creditos" id="creditos" placeholder="creditos" class="campo-input">
+                        <input type="number" name="creditos" id="creditos" placeholder="creditos" class="campo-input">
                     </div>
                 </form>
 
-                <button type="submit" class="boton boton-azul">Agregar Materia</button>
+                <button id="agregar" type="submit" class="boton boton-azul">Agregar Materia</button>
             </div>
             <!--INGRESAR ASIGNATURA-->
 
             <div class="promedio contenedor">
-                <table class="calificaciones">
+                <table id="tabla" class="calificaciones header_fijo">
                     <thead>
-                        <th>Asignatura</th>
-                        <th>Calificación</th>
-                        <th>Creditos</th>
+                        <th class="text-center">Asignatura</th>
+                        <th class="text-center">Calificación</th>
+                        <th class="text-center">Creditos</th>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td class="text-start"></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        
-                    </tbody>
+                    <div class="contenedor">
+                        <tbody>
+                        </tbody>
+                    </div>
                 </table>
+                <div class="flex resultado">
+                    <p id="creditosTotales">Creditos totales: 0</p>
+                    <p id="promedio">Promedio: 0</p>
+                </div>
 
                 <div class="botones">
                     <button class="boton-result boton-rojo">Borrar todo</button>
@@ -76,6 +76,7 @@
             </div>
         </div>
         <!--CONTENEDOR-->
+        <script src="./js/app.js"></script>
     </main>
 </body>
 

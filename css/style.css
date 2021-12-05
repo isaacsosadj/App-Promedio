@@ -1,8 +1,11 @@
 :root {
     --fuente: "Poppins", sans-serif;
+    --principal: #6d5dfc;
     --azul: #0077ff;
     --rojo: #ff1f00;
     --blanco: #ffff;
+    --body-color: #f0f0f0;
+    --app-color: #fff;
 }
 
 html {
@@ -21,7 +24,7 @@ html {
 *:after {
     box-sizing: inherit;
 }
-.text-central {
+.text-center {
     text-align: center;
 }
 .text-start {
@@ -29,6 +32,7 @@ html {
 }
 body {
     font-family: var(--fuente);
+    background: #fafafa;
 }
 p {
     margin: 0;
@@ -43,12 +47,13 @@ p {
     height: 15.5rem;
     padding: 5rem 0 0 3rem;
     text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
 }
 .nombre-header {
     margin: 0 0 1rem 0;
     font-weight: bold;
     font-size: 4.2rem;
-    color: var(--azul);
+    color: var(--principal);
 }
 .parrafo-header {
     font-size: 1.8rem;
@@ -68,28 +73,33 @@ p {
 }
 
 .principal {
-    display: grid;
-    grid-template-rows: auto;
-    row-gap: 2rem;
-    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .ingresarAsignatura {
-    border-bottom: 1px solid var(--azul);
-    padding: .5rem 0 1.8rem;
+    border-bottom: 1px solid var(--principal);
+    padding: 0.5rem 0 1.8rem;
     margin-bottom: 3rem;
     font-size: 2rem;
 }
 .ingresar-asignatura,
 .promedio {
-    border: 1px solid var(--azul);
+    border: 1px solid var(--principal);
     border-radius: 1rem;
     padding: 0 2rem;
     max-height: 78rem;
+    background: var(--app-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
 }
 
 @media (min-width: 800px) {
-    .ingresar-asignatura, .promedio {
+    .ingresar-asignatura,
+    .promedio {
         height: 60rem;
     }
     .principal {
@@ -103,11 +113,10 @@ p {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;
     }
-    .asignatura{
+    .asignatura {
         grid-column: 1 / 3;
     }
 }
-
 
 .input-label {
     font-weight: 700;
@@ -116,13 +125,19 @@ p {
 .campo-input {
     width: 100%;
     padding: 1rem;
-    border: 1px solid var(--azul);
+    border: 1px solid var(--principal);
     border-radius: 0.5rem;
     margin: 1rem 0 3rem 0;
 }
+.campo-input:focus {
+    outline: none;
+    border: 1px solid var(--azul);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.438);
+}
 
 /*Botones*/
-.boton, .boton-result {
+.boton,
+.boton-result {
     padding: 1.5rem;
     width: 100%;
     color: var(--blanco);
@@ -134,7 +149,8 @@ p {
     border: 0;
 }
 
-.boton, .boton-result:hover {
+.boton,
+.boton-result:hover {
     cursor: pointer;
 }
 
@@ -145,9 +161,10 @@ p {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
+    position: relative;
+    top: -2rem;
     margin: 5rem 0 2rem;
-    border-top: 1px solid var(--azul);
-    padding-top: 2.5rem;
+    border-top: 1px solid var(--principal);
 }
 .boton {
     margin: 2rem 0;
@@ -156,10 +173,10 @@ p {
     .boton {
         margin-top: 10rem;
     }
-    
+
     .botones {
         flex-direction: row-reverse;
-        flex-basis: calc(0 0 5);
+        gap: 2rem;
         margin: 5rem;
         width: 85%;
         align-items: flex-end;
@@ -167,20 +184,21 @@ p {
 }
 
 .boton-azul {
-    background-color: var(--azul);
-    transition: background-color ease .3s;
+    background-color: var(--principal);
+    transition: background-color ease 0.3s;
 }
 .boton-azul:hover {
-    background-color: #0165d6;
+    background-color: #5b0eeb;
 }
 .boton-rojo {
     background-color: var(--rojo);
-    transition: background-color ease .3s;
+    transition: background-color ease 0.3s;
 }
 .boton-rojo:hover {
     background-color: #c21701;
 }
 
+/*Table*/
 /*Table*/
 .calificaciones {
     border-spacing: 0;
@@ -191,7 +209,9 @@ th {
     font-size: 1.5rem;
     padding: 2rem 0 1.3rem 1.5rem;
     text-align: start;
+    border-bottom: 1px solid var(--principal);
 }
+
 @media (min-width: 530px) {
     th {
         font-size: 2rem;
@@ -201,13 +221,72 @@ th {
 
 td {
     font-size: 1.3rem;
-    padding: .6rem;
-    border-top: 1px solid var(--azul);
+    padding: 0.6rem;
     text-align: center;
+    border-bottom: 1px solid #e1e1e1;
 }
+
 @media (min-width: 600px) {
     td {
         font-size: 1.5rem;
         text-align: start;
     }
+}
+
+.header_fijo {
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.header_fijo thead tr {
+    position: relative;
+}
+
+.header_fijo tbody {
+    display: block;
+    overflow-y: auto;
+    width: 300%;
+    height: 35rem;
+}
+
+.header_fijo tbody tr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.header_fijo tbody tr td {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.flex {
+    display: flex;
+}
+
+.resultado {
+    border-top: 1px solid var(--principal);
+    padding-top: 2rem;
+    justify-content: space-evenly;
+    margin: 2.5rem auto;
+    font-weight: bold;
+}
+
+.error, .correcto {
+    text-align: center;
+    padding: 2rem;
+    color: var(--blanco);
+    text-transform: uppercase;
+    grid-column: 1 / 3;
+    animation: fadeIn 1s alternate;
+    margin-bottom: 2rem;
+    font-family: var(--fuente);
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.error {
+    background-color: var(--rojo);
+}
+.correcto {
+    background-color: rgb(74, 185, 0);
 }
